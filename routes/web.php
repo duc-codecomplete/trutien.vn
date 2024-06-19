@@ -24,3 +24,8 @@ Route::get('/tin-tuc', [HomeController::class, 'listNews']);
 Route::get('/tin-tuc/{title}', [HomeController::class, 'detailNews']);
 
 
+Route::group(['prefix' => 'admin', 'middleware' => 'isAdmin'], function () {
+    Route::get('/', 'AdminController@home');
+});
+
+
