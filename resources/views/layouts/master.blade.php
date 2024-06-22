@@ -46,7 +46,7 @@
 
             <div class="main-headerpage d-flex">
                 <a href="/home/" class="logo-page ">
-                    <img src="/images/logo.png" alt="">
+                    <img src="/images/logo-trutien-trans.png" alt="" style="width:188px;height:101px">
                 </a>
                 <div class="list-menu f-utm_essendine_caps_b t-upper d-flex">
                     <div class="it-menu p-relative">
@@ -165,13 +165,13 @@
                         <div class="umbella p-absolute um-blue"></div>
                         <div class="umbella p-absolute um-pink"></div>
                         <div class="taigame p-relative">
-                            <a href="/tai-game.html" target="_blank">
+                            <a href="/tai-game" target="_blank">
                                 <canvas id="canvas" width="241" height="130"
                                     style="background-color: rgb(0, 0, 0);"></canvas>
                             </a>
                         </div>
                         <div class="reg-card-home f-utm_essendine_caps_b reg-home-top dangky-home">
-                            <a rel="register-popup" href="https://google.com"
+                            <a rel="register-podpup" href="https://id.trutien.vn"
                                 class="a100 d-flex a-center j-center various">
                                 <img src="/images/dot.png" alt="">
                                 <span>Đăng Ký Nhanh</span>
@@ -179,7 +179,7 @@
                             </a>
                         </div>
                         <div class="reg-card-home f-utm_essendine_caps_b card-home-top napthe-home">
-                            <a target="_blank" href="javascript:void(0)" class="a100 d-flex a-center j-center">
+                            <a target="_blank" href="https://id.trutien.vn/nap-the" class="a100 d-flex a-center j-center">
                                 <img src="/images/dot.png" alt="">
                                 <span>Nạp Thẻ</span>
                                 <img src="/images/dot.png" alt="">
@@ -190,20 +190,20 @@
                     <div class="slide-banner">
                         <a target="_blank" href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
                             class="it-banner ActiveBanner">
-                            <img src="/images/nap0906-491x253.jpg" alt="">
+                            <img src="/images/banner1.jpg" alt="">
                         </a>
                         <a target="_blank" href="/home/su-kien/dai-tiec-cuu-am-thang-5.htm" class="it-banner ">
-                            <img src="/images/dai-tiec-cuu-am-491x253.jpg" alt="">
+                            <img src="/images/banner2.jpg" alt="">
                         </a>
                         <a target="_blank" href="/home/news/su-kien/khuyen-mai-danh-tuan-thang-062024.html"
                             class="it-banner ">
-                            <img src="/images/danhtuan-491x253.jpg" alt="">
+                            <img src="/images/banner3.jpg" alt="">
                         </a>
                         <a target="_blank" href="javascript:void(0)" class="it-banner ">
-                            <img src="/images/slide.jpg" alt="">
+                            <img src="/images/banner1.jpg" alt="">
                         </a>
                         <a target="_blank" href="javascript:void(0)" class="it-banner ">
-                            <img src="/images/491x253.jpg" alt="">
+                            <img src="/images/banner2.jpg" alt="">
                         </a>
                     </div>
 
@@ -316,7 +316,7 @@
                                 <div class="box-detail-newhome d-flex active" id="dt-newhome1">
                                     <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
                                         class="img-hot">
-                                        <img src="/images/nap0906-235x322.jpg" alt="">
+                                        <img src="/images/khuyenmai.jpg" alt="">
                                     </a>
 
                                     <div class="info-hot-list-newhome">
@@ -410,7 +410,7 @@
                                 <div class="box-detail-newhome  d-flex" id="dt-newhome2">
                                     <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
                                         class="img-hot">
-                                        <img src="/images/nap0906-235x322.jpg" alt="">
+                                        <img src="/images/khuyenmai.jpg" alt="">
                                     </a>
                                     <div class="info-hot-list-newhome">
 
