@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    public const CATEGORIES = [
+        'tintuc' => "Tin Tức",
+        'huongdan' => "Hướng Dẫn",
+        'sukien' => "Sự Kiện",
+    ];
 }

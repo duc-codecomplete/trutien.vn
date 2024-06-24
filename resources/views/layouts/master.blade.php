@@ -36,8 +36,8 @@
 
 <body class="change_bg_pbm_home bg-home bg-home2 " style="margin: auto">
     <div class="bg-video">
-        <video id="video-pc" class="video-bg" muted="" loop autoplay>
-            <source src="/videos/frame1.mp4" type="video/mp4">
+        <video id="video-pc" class="video-bg" preload="none" muted="" loop autoplay>
+            <source src="/videos/frame1.mp4#t=0.1" type="video/mp4">
         </video>
     </div>
     <div class="header-page">
@@ -46,7 +46,7 @@
 
             <div class="main-headerpage d-flex">
                 <a href="/home/" class="logo-page ">
-                    <img src="/images/logo-trutien-trans.png" alt="" style="width:188px;height:101px">
+                    <img src="/images/logo-trutien-trans.png" alt="" style="width:250px;height:150px">
                 </a>
                 <div class="list-menu f-utm_essendine_caps_b t-upper d-flex">
                     <div class="it-menu p-relative">
@@ -179,7 +179,8 @@
                             </a>
                         </div>
                         <div class="reg-card-home f-utm_essendine_caps_b card-home-top napthe-home">
-                            <a target="_blank" href="https://id.trutien.vn/nap-the" class="a100 d-flex a-center j-center">
+                            <a target="_blank" href="https://id.trutien.vn/nap-the"
+                                class="a100 d-flex a-center j-center">
                                 <img src="/images/dot.png" alt="">
                                 <span>Nạp Thẻ</span>
                                 <img src="/images/dot.png" alt="">
@@ -275,25 +276,15 @@
                                     data-newhome="1">Tin mới
                                 </div>
                                 <div class="it-tab-newhome p-relative c-pointer d-flex a-center j-center"
-                                    data-newhome="2">Thông
-                                    báo
+                                    data-newhome="2">Tin Tức
                                 </div>
                                 <div class="it-tab-newhome p-relative c-pointer d-flex a-center j-center"
-                                    data-newhome="3">Sự
-                                    kiện
+                                    data-newhome="3">Sự Kiện
                                 </div>
                                 <div class="it-tab-newhome p-relative c-pointer d-flex a-center j-center"
-                                    data-newhome="4">Cộng
-                                    đồng
+                                    data-newhome="4">Hướng Dẫn
                                 </div>
-                                <div class="it-tab-newhome p-relative c-pointer d-flex a-center j-center"
-                                    data-newhome="5">Báo
-                                    chí
-                                </div>
-                                <div class="it-tab-newhome p-relative c-pointer d-flex a-center j-center"
-                                    data-newhome="6">Hướng
-                                    dẫn
-                                </div>
+
 
                                 <div class="view-more p-absolute">
                                     <a target="_blank" href="/home/news/tin-moi.html" id="newhome1"
@@ -320,583 +311,145 @@
                                     </a>
 
                                     <div class="info-hot-list-newhome">
-                                        <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
+                                        @if($data["latest"])
+                                        <a href="/tin-tuc/{{ $data["latest"]->slug }}"
                                             class="info-hot f-utm_essendine_caps_b t-upper p-relative">
-                                            <div class="name-hot">CƠ HỘI RINH QUÀ TỪ SỰ KIỆN ƯU ĐÃI NẠP VÀNG SẮP KẾT
-                                                THÚC! THAM GIA NGAY!
+                                            <div class="name-hot">{{$data["latest"]->title}}
                                             </div>
-                                            <div class="by-date">12-06-2024</div>
+                                            <div class="by-date">
+                                                {{\Carbon\Carbon::parse($data["latest"]->created_at)->format("d-m-Y")}}</div>
                                             <div class="des-hot"></div>
                                         </a>
+                                        @endif
 
                                         <div class="list-dt-newhome">
-                                            <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
+                                            @foreach ($data["posts"] as $item)
+                                            <a href="/tin-tuc/{{ $item->slug }}"
                                                 class="it-dt-newhome d-flex f-tahoma t-upper">
                                                 <div class="cat-newhome">[Tin mới]</div>
-                                                <div class="title-newhome f-tahomabold">[09/06-12/06] ƯU ĐÃI NẠP VÀNG -
-                                                    NHẬN NGÀN QUÀ TẶNG
+                                                <div class="title-newhome f-tahomabold">{{$item->title}}
                                                 </div>
-                                                <div class="date-newhome">08-06-2024</div>
-                                                <!-- Sự kiện Ưu Đãi Nạp Vàng mang đến nhiều cơ hội sở hữu bảo vật vô giá, quý nhân sĩ có thể tìm thấy món đồ mình yêu thích tại sự kiện này. Tham gia ngay!
-
-                        -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/napvang0806/nap0906-235x322.jpg" /> -->
+                                                <div class="date-newhome">
+                                                    {{\Carbon\Carbon::parse($item->created_at)->format("d-m-Y")}}</div>
                                             </a>
-                                            <a href="/home/news/tin-tuc/tro-chuyen-cung-vip-9-thu-24-cuu-am-chan-kinh.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Tin mới]</div>
-                                                <div class="title-newhome f-tahomabold">TRÒ CHUYỆN CÙNG VIP 9 THỨ 24 Tru
-                                                    Tiên 3
-                                                </div>
-                                                <div class="date-newhome">08-06-2024</div>
-                                                <!-- Cuộc trò chuyện thật náo nhiệt khi diện kiến VIP 9 thứ 24 và cMa anh em trong Bang. Tru Tiên 3   được vinh dự khi xướng tên lên Bảng Vàng thêm 1 VIP 9 trong năm 2024,cùng Thù Di trò chuyện với vị Huynh đài này nhé. Khám phá ngay! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/vip-9-24-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/vip" class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Tin mới]</div>
-                                                <div class="title-newhome f-tahomabold">Nhận quà VIP Tháng 7/2024</div>
-                                                <div class="date-newhome">07-06-2024</div>
-                                                <!-- Quý nhân sĩ Tru Tiên 3 đã có thể nhận quà VIP tháng 5 từ ngày 07/06/2024. Xem ngay! -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/size-moi-235x322/uu-dai-vip-235x322.png" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/khuyen-mai-danh-tuan-thang-062024"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Tin mới]</div>
-                                                <div class="title-newhome f-tahomabold">KHUYẾN MÃI DANH TUẤN THÁNG 6 SẮP
-                                                    KẾT
-                                                    THÚC, THAM GIA NGAY!
-                                                </div>
-                                                <div class="date-newhome">05-06-2024</div>
-                                                <!-- Nhằm mang đến những tính năng hỗ trợ cho người chơi, sự kiện Khuyến Mãi Danh Tuấn Tháng 6 đã được khai mở, Tham gia ngay để nhận được nhiều ưu đãi hơn! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/danhtuan/danhtuan-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/tin-tuc/thong-bao-bao-tri-toan-bo-may-chu-04062024.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Tin mới]</div>
-                                                <div class="title-newhome f-tahomabold">THÔNG BÁO BẢO TRÌ TOÀN BỘ MÁY
-                                                    CHỦ
-                                                    04/06/2024
-                                                </div>
-                                                <div class="date-newhome">03-06-2024</div>
-                                                <!-- Để mang lại trải nghiệm tốt cho người chơi, Tru Tiên 3   sẽ tiến hành bảo trì toàn bộ máy chủ vào lúc 09h00 đến 11h00 ngày 04/06/2024. Chư vị nhân sĩ hãy cập nhật thông tin ngay! -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/size-moi-235x322/thong-bao-1-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/tin-tuc/hot-lo-dien-bxh-top-10-dai-tiec-cuu-am-thang-5.-xem-ngay.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Tin mới]</div>
-                                                <div class="title-newhome f-tahomabold">[HOT] LỘ DIỆN BXH TOP 10 ĐẠI
-                                                    TIỆC
-                                                    Tru Tiên 3 THÁNG 5. XEM NGAY!
-                                                </div>
-                                                <div class="date-newhome">01-06-2024</div>
-                                                <!-- BXH TOP Đại Tiệc Tru Tiên 3 đã chứng kiến cuộc đua vô cùng hấp dẫn kịch tính cho đến tận những phút cuối. Cùng nhau xem kết quả nhé! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/tong-ket-dai-tiec-cuu-am-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/khuyen-mai-danh-tuan-thang-062024.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Tin mới]</div>
-                                                <div class="title-newhome f-tahomabold">KHUYẾN MÃI DANH TUẤN THÁNG
-                                                    06/2024</div>
-                                                <div class="date-newhome">31-05-2024</div>
-                                                <!-- Hành tẩu trong giang hồ Tru Tiên 3   sẽ thuận lợi hơn khi sở hữu Danh tuấn, giờ đây nhân sĩ có thể nhận được những phúc lợi từ sự kiện Khuyến Mãi Danh Tuấn, đừng bỏ lỡ! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/danhtuan/danhtuan-235x322.jpg" /> -->
-                                            </a>
+                                            @endforeach
                                         </div>
 
                                     </div>
                                 </div>
-
-                                <!-- thong bao -->
-                                <div class="box-detail-newhome  d-flex" id="dt-newhome2">
-                                    <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
-                                        class="img-hot">
-                                        <img src="/images/khuyenmai.jpg" alt="">
-                                    </a>
-                                    <div class="info-hot-list-newhome">
-
+                                <div class="hot-list-newhome p-relative">
+                                    <div class="box-detail-newhome d-flex" id="dt-newhome2">
                                         <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
-                                            class="info-hot f-utm_essendine_caps_b t-upper p-relative">
-                                            <div class="name-hot">C�&nbsp; HỘI RINH QUÀ TỪ SỰ KIỆN ƯU ĐÃI N�&nbsp;P VÀNG
-                                                SẮP KẾT
-                                                THÚC! THAM GIA NGAY!
-                                            </div>
-                                            <div class="by-date">12-06-2024</div>
-                                            <div class="des-hot"></div>
+                                            class="img-hot">
+                                            <img src="/images/khuyenmai.jpg" alt="">
                                         </a>
-
-                                        <div class="list-dt-newhome">
-                                            <a href="/home/news/tin-tuc/tro-chuyen-cung-vip-9-thu-24-cuu-am-chan-kinh.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Thông báo]</div>
-                                                <div class="title-newhome f-tahomabold">TRÒ CHUYỆN CÙNG VIP 9 THỨ 24 Tru
-                                                    Tiên 3 CHÂN
-                                                    KINH
+    
+                                        <div class="info-hot-list-newhome">
+                                            @if($data["latesttintuc"])
+                                            <a href="/tin-tuc/{{ $data["latest"]->slug }}"
+                                                class="info-hot f-utm_essendine_caps_b t-upper p-relative">
+                                                <div class="name-hot">{{$data["latesttintuc"]->title}}
                                                 </div>
-                                                <div class="date-newhome">08-06-2024</div>
-                                                <!-- Cuộc trò chuyện thật náo nhiệt khi diện kiến VIP 9 thứ 24 và cMa anh em trong Bang. Tru Tiên 3   được vinh dự khi xướng tên lên Bảng Vàng thêm 1 VIP 9 trong năm 2024,cùng Thù Di trò chuyện với vị Huynh đài này nhé. Khám phá ngay! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/vip-9-24-235x322.jpg" /> -->
+                                                <div class="by-date">
+                                                    {{\Carbon\Carbon::parse($data["latesttintuc"]->created_at)->format("d-m-Y")}}</div>
+                                                <div class="des-hot"></div>
                                             </a>
-                                            <a href="/vip" class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Thông báo]</div>
-                                                <div class="title-newhome f-tahomabold">Nhận qu�&nbsp; VIP Tháng 5/2024
-                                                </div>
-                                                <div class="date-newhome">07-06-2024</div>
-                                                <!-- Quý nhân sĩ Tru Tiên 3   đã có thể nhận quà VIP tháng 5 từ ngày 07/06/2024. Xem ngay! -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/size-moi-235x322/uu-dai-vip-235x322.png" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/khuyen-mai-danh-tuan-thang-062024"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Thông báo]</div>
-                                                <div class="title-newhome f-tahomabold">KHUYẾN MÃI DANH TUẤN THÁNG 6 SẮP
-                                                    KẾT
-                                                    THÚC, THAM GIA NGAY!
-                                                </div>
-                                                <div class="date-newhome">05-06-2024</div>
-                                                <!-- Nhằm mang đến những tính năng hỗ trợ cho người chơi, sự kiện Khuyến Mãi Danh Tuấn Tháng 6 đã được khai mở, Tham gia ngay để nhận được nhiều ưu đãi hơn! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/danhtuan/danhtuan-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/tin-tuc/thong-bao-bao-tri-toan-bo-may-chu-04062024.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Thông báo]</div>
-                                                <div class="title-newhome f-tahomabold">THÔNG BÁO BẢO TRÌ TOÀN BỘ MÁY
-                                                    CHỦ
-                                                    04/06/2024
-                                                </div>
-                                                <div class="date-newhome">03-06-2024</div>
-                                                <!-- Để mang lại trải nghiệm tốt cho người chơi, Tru Tiên 3   sẽ tiến hành bảo trì toàn bộ máy chủ vào lúc 09h00 đến 11h00 ngày 04/06/2024. Chư vị nhân sĩ hãy cập nhật thông tin ngay! -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/size-moi-235x322/thong-bao-1-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/tin-tuc/hot-lo-dien-bxh-top-10-dai-tiec-cuu-am-thang-5.-xem-ngay.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Thông báo]</div>
-                                                <div class="title-newhome f-tahomabold">[HOT] LỘ DIỆN BXH TOP 10
-                                                    Đ�&nbsp;I TIỆC
-                                                    Tru Tiên 3 THÁNG 5. XEM NGAY!
-                                                </div>
-                                                <div class="date-newhome">01-06-2024</div>
-                                                <!-- BXH TOP Đại Tiệc Tru Tiên 3 đã chứng kiến cuộc đua vô cùng hấp dẫn kịch tính cho đến tận những phút cuối. Cùng nhau xem kết quả nhé! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/tong-ket-dai-tiec-cuu-am-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/3005-3105-nap-don-nhan-thuong-mung-ngay-tu-hoi.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Thông báo]</div>
-                                                <div class="title-newhome f-tahomabold">NGÀY CUỐI THAM GIA N�&nbsp;P
-                                                    Đ�&nbsp;N
-                                                    VÀ LẮC BALL NHẬN QUÀ TiênI Đ�&nbsp;I TIỆC Tru Tiên 3
-                                                </div>
-                                                <div class="date-newhome">31-05-2024</div>
-                                                <!--  -->
-                                                <!-- <img src="/home/static/uploads/2024/t05/napdon3005/nap3005-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/tin-tuc/co-gi-hot-tai-dai-tiec-cuu-am-thang-5.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Thông báo]</div>
-                                                <div class="title-newhome f-tahomabold">CÓ GÌ HOT TiênI Đ�&nbsp;I TIỆC
-                                                    TRU TIÊN THÁNG 8?
-                                                </div>
-                                                <div class="date-newhome">30-05-2024</div>
-                                                <!--  -->
-                                                <!-- <img src="/home/static/uploads/2024/t05/daitieccuuam/dai-tiec-cuu-am-share-235x322.jpg" /> -->
-                                            </a>
+                                            @endif
+    
+                                            <div class="list-dt-newhome">
+                                                @foreach ($data["poststintuc"] as $item)
+                                                <a href="/tin-tuc/{{ $item->slug }}"
+                                                    class="it-dt-newhome d-flex f-tahoma t-upper">
+                                                    <div class="cat-newhome">[Tin mới]</div>
+                                                    <div class="title-newhome f-tahomabold">{{$item->title}}
+                                                    </div>
+                                                    <div class="date-newhome">
+                                                        {{\Carbon\Carbon::parse($item->created_at)->format("d-m-Y")}}</div>
+                                                </a>
+                                                @endforeach
+                                            </div>
+    
                                         </div>
-
                                     </div>
+    
                                 </div>
-
-                                <!-- su kien -->
-                                <div class="box-detail-newhome  d-flex" id="dt-newhome3">
-                                    <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
-                                        class="img-hot">
-                                        <img src="/images/nap0906-235x322.jpg" alt="">
-                                    </a>
-                                    <div class="info-hot-list-newhome">
-
+    
+                                <div class="hot-list-newhome p-relative">
+                                    <div class="box-detail-newhome d-flex" id="dt-newhome3">
                                         <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
-                                            class="info-hot f-utm_essendine_caps_b t-upper p-relative">
-                                            <div class="name-hot">[09/06-12/06] ƯU ĐÃI N�&nbsp;P VÀNG - NHẬN NGÀN QUÀ
-                                                TẶNG</div>
-                                            <div class="by-date">08-06-2024</div>
-                                            <div class="des-hot">Sự kiện�&nbsp;Ưu Đãi Nạp V�&nbsp;ng mang đến nhiều cơ
-                                                hội sở
-                                                hữu bảo vật vô giá, quý nhân sĩ có thể tìm thấy món đồ mình yêu thích
-                                                tại sự
-                                                kiện n�&nbsp;y. Tham gia ngay!
-
+                                            class="img-hot">
+                                            <img src="/images/khuyenmai.jpg" alt="">
+                                        </a>
+    
+                                        <div class="info-hot-list-newhome">
+                                            @if($data["latestsukien"])
+                                            <a href="/tin-tuc/{{ $data["latestsukien"]->slug }}"
+                                                class="info-hot f-utm_essendine_caps_b t-upper p-relative">
+                                                <div class="name-hot">{{$data["latestsukien"]->title}}
+                                                </div>
+                                                <div class="by-date">
+                                                    {{\Carbon\Carbon::parse($data["latestsukien"]->created_at)->format("d-m-Y")}}</div>
+                                                <div class="des-hot"></div>
+                                            </a>
+                                            @endif
+    
+                                            <div class="list-dt-newhome">
+                                                @foreach ($data["postssukien"] as $item)
+                                                <a href="/tin-tuc/{{ $item->slug }}"
+                                                    class="it-dt-newhome d-flex f-tahoma t-upper">
+                                                    <div class="cat-newhome">[Tin mới]</div>
+                                                    <div class="title-newhome f-tahomabold">{{$item->title}}
+                                                    </div>
+                                                    <div class="date-newhome">
+                                                        {{\Carbon\Carbon::parse($item->created_at)->format("d-m-Y")}}</div>
+                                                </a>
+                                                @endforeach
                                             </div>
-                                        </a>
-
-                                        <div class="list-dt-newhome">
-                                            <a href="/home/news/su-kien/khuyen-mai-danh-tuan-thang-062024.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Sự kiện]</div>
-                                                <div class="title-newhome f-tahomabold">KHUYẾN MÃI DANH TUẤN THÁNG
-                                                    06/2024</div>
-                                                <div class="date-newhome">31-05-2024</div>
-                                                <!-- Hành tẩu trong giang hồ Tru Tiên 3   sẽ thuận lợi hơn khi sở hữu Danh tuấn, giờ đây nhân sĩ có thể nhận được những phúc lợi từ sự kiện Khuyến Mãi Danh Tuấn, đừng bỏ lỡ! -->
-                                                <!-- <img src="/home/static/uploads/2024/t06/danhtuan/danhtuan-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/3005-3105-nap-don-nhan-thuong-mung-ngay-tu-hoi.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Sự kiện]</div>
-                                                <div class="title-newhome f-tahomabold">[30/05-31/05] N�&nbsp;P
-                                                    Đ�&nbsp;N NHẬN
-                                                    THƯỞNG - MỪNG NGÀY TỤ HỘI
-                                                </div>
-                                                <div class="date-newhome">29-05-2024</div>
-                                                <!-- Tham gia Nạp Đơn ngay để nhận quà tặng đặc biệt và vô số quà tặng hấp dẫn khMa. Nhận quà ngay! -->
-                                                <!-- <img src="/home/static/uploads/2024/t05/napdon3005/nap3005-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/su-kien/dai-tiec-cuu-am-thang-5.htm"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Sự kiện]</div>
-                                                <div class="title-newhome f-tahomabold">[23/05 - 31/05] SỰ KIỆN
-                                                    Đ�&nbsp;I TIỆC
-                                                    Tru Tiên 3 THÁNG 5
-                                                </div>
-                                                <div class="date-newhome">25-05-2024</div>
-                                                <!-- Với hàng loạt phần thưởng quý giá đang chờ đón như PVC, Võ Học, Nội công, Tọa Kỵ, Pet, Kỳ Ngộ... Kho tàng bảo vật vô giá của CACK sẽ nằm trong tay bạn! Tham gia ngay! -->
-                                                <!-- <img src="/home/static/uploads/2024/t05/daitieccuuam/dai-tiec-cuu-am-share-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/2505-3105-tieu-phi-vang-nhan-hoa-can-dai-thang-5.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Sự kiện]</div>
-                                                <div class="title-newhome f-tahomabold">[25/05-31/05] TIÊU PHÍ VÀNG NHẬN
-                                                    HỎA CÁN
-                                                    ĐÀI THÁNG 5
-                                                </div>
-                                                <div class="date-newhome">24-05-2024</div>
-                                                <!-- Khi tiến hành tiêu phí vàng đạt mốc, quý nhân sĩ sẽ nhận được phần thưởng Hỏa Cán Đài vô cùng giá trị. Tham gia ngay! -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/size-moi-235x322/tieu-phi-vang-235x322.png" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/1505-1705-uu-dai-nap-vang-nhan-ngan-uu-dai.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Sự kiện]</div>
-                                                <div class="title-newhome f-tahomabold">[15/05-17/05] ƯU ĐÃI N�&nbsp;P
-                                                    VÀNG -
-                                                    NHẬN NGÀN ƯU ĐÃI
-                                                </div>
-                                                <div class="date-newhome">14-05-2024</div>
-                                                <!-- Sự kiện Ưu Đãi Nạp Vàng mang đến nhiều cơ hội sở hữu bảo vật vô giá, quý nhân sĩ có thể tìm thấy món đồ mình yêu thích tại sự kiện này. Tham gia ngay!
-
-                        -->
-                                                <!-- <img src="/home/static/uploads/2024/t05/napvang1505/uudai1505-235x322.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/1505-1805-tieu-phi-vang-nhan-hoa-can-dai-gia-tri.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Sự kiện]</div>
-                                                <div class="title-newhome f-tahomabold">[15/05-18/05] TIÊU PHÍ VÀNG NHẬN
-                                                    HỎA CÁN
-                                                    ĐÀI GIÁ TRỊ
-                                                </div>
-                                                <div class="date-newhome">14-05-2024</div>
-                                                <!-- Khi tiến hành tiêu phí vàng đạt mốc, quý nhân sĩ sẽ nhận được phần thưởng Hỏa Cán Đài vô cùng giá trị. Tham gia ngay! -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/size-moi-235x322/tieu-phi-vang-235x322.png" /> -->
-                                            </a>
-                                            <a href="/home/news/su-kien/0605-0805-uu-dai-nap-vang-chao-he-ron-rang.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Sự kiện]</div>
-                                                <div class="title-newhome f-tahomabold">[06/05-08/05] ƯU ĐÃI N�&nbsp;P
-                                                    VÀNG -
-                                                    CHÀO HÈ RỘN RÀNG
-                                                </div>
-                                                <div class="date-newhome">05-05-2024</div>
-                                                <!--  Tru Tiên 3   khai mở sự kiện Ưu Đãi Nạp Vàng, quý nhân sĩ có thể sở hữu những vật phẩm quý hiểm mà chỉ có thể nhận được tại sự kiện này. Tham gia ngay!
-
-                        -->
-                                                <!-- <img src="/home/static/uploads/2024/t05/napvang0605/napvang0605_235x322.jpg" /> -->
-                                            </a>
+    
                                         </div>
-
                                     </div>
+    
                                 </div>
-
-                                <!-- cong dong -->
-                                <div class="box-detail-newhome  d-flex" id="dt-newhome4">
-                                    <a href="/home/news/cong-dong/tro-chuyen-cung-vip-9-thu-22-cuu-am-chan-kinh.html"
-                                        class="img-hot">
-                                        <img src="/images/vip9-22-235x322.png" alt="">
-                                    </a>
-                                    <div class="info-hot-list-newhome">
-
-                                        <a href="/home/news/cong-dong/tro-chuyen-cung-vip-9-thu-22-cuu-am-chan-kinh.html"
-                                            class="info-hot f-utm_essendine_caps_b t-upper p-relative">
-                                            <div class="name-hot">TRÒ CHUYỆN CÙNG VIP 9 THỨ 22 Tru Tiên 3 </div>
-                                            <div class="by-date">04-04-2024</div>
-                                            <div class="des-hot">Tru Tiên 3 h được vinh dự khi xướng tên lên Bảng
-                                                V�&nbsp;ng
-                                                thêm 1 VIP 9 trong năm 2024, năm nay cMa Đại cao thủ xuất hiện liên tục
-                                                khiến
-                                                cộng đồng vô cùng náo loạn, cùng Thù Di trò chuyện với vị VIP 9 thứ 22
-                                                nhé. Khám
-                                                phá ngay!
+    
+                                <div class="hot-list-newhome p-relative">
+                                    <div class="box-detail-newhome d-flex active" id="dt-newhome4">
+                                        <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
+                                            class="img-hot">
+                                            <img src="/images/khuyenmai.jpg" alt="">
+                                        </a>
+    
+                                        <div class="info-hot-list-newhome">
+                                            @if($data["latesthuongdan"])
+                                            <a href="/tin-tuc/{{ $data["latesthuongdan"]->slug }}"
+                                                class="info-hot f-utm_essendine_caps_b t-upper p-relative">
+                                                <div class="name-hot">{{$data["latesthuongdan"]->title}}
+                                                </div>
+                                                <div class="by-date">
+                                                    {{\Carbon\Carbon::parse($data["latesthuongdan"]->created_at)->format("d-m-Y")}}</div>
+                                                <div class="des-hot"></div>
+                                            </a>
+                                            @endif
+    
+                                            <div class="list-dt-newhome">
+                                                @foreach ($data["postshuongdan"] as $item)
+                                                <a href="/tin-tuc/{{ $item->slug }}"
+                                                    class="it-dt-newhome d-flex f-tahoma t-upper">
+                                                    <div class="cat-newhome">[Tin mới]</div>
+                                                    <div class="title-newhome f-tahomabold">{{$item->title}}
+                                                    </div>
+                                                    <div class="date-newhome">
+                                                        {{\Carbon\Carbon::parse($item->created_at)->format("d-m-Y")}}</div>
+                                                </a>
+                                                @endforeach
                                             </div>
-                                        </a>
-
-                                        <div class="list-dt-newhome">
-                                            <a href="/home/news/cong-dong/cuoc-gap-go-trong-dem-cung-vi-vip-9-thu-21-bi-an.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Cộng đồng]</div>
-                                                <div class="title-newhome f-tahomabold">CUỘC GẶP GỠ TRONG ĐÊM CÙNG VỊ
-                                                    VIP
-                                                    9 THỨ 21 BÍ ẨN
-                                                </div>
-                                                <div class="date-newhome">20-02-2024</div>
-                                                <!-- Đầu năm cộng đồng Tru Tiên 3   có duyên gặp gỡ cùng với rất nhiều chư vị cao thủ giang hồ, cùng Thù Di trò chuyện với vị VIP 9 thứ 21 tại máy chủ Thái Sơn nhé. Khám phá ngay! -->
-                                                <!-- <img src="/home/static/uploads/2024/t02/143x137-vip-19-21.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/cong-dong/dau-nam-rong-lo-dien-vip-9-thu-19-va-20-tai-cuu-am-chan-kinh.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Cộng đồng]</div>
-                                                <div class="title-newhome f-tahomabold">ĐẦU NĂM RỒNG "LỘ DIỆN" CÙNG LÚC
-                                                    2 VIP 9
-                                                    THỨ 19 VÀ 20 TiênI Tru Tiên 3
-                                                </div>
-                                                <div class="date-newhome">16-02-2024</div>
-                                            </a>
-                                            <a href="/home/news/cong-dong/vip-9-thu-18-lo-dien-mung-sinh-nhat-10-nam.html"
-                                                target="_blank" class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Cộng đồng]</div>
-                                                <div class="title-newhome f-tahomabold">VIP 9 THỨ 18 "LỘ DIỆN" - MỪNG
-                                                    SINH NHẬT
-                                                    10 NĂM
-                                                </div>
-                                                <div class="date-newhome">27-05-2023</div>
-                                            </a>
-                                            <a href="/home/news/cong-dong/tin-vui-dau-nam-vip-9-thu-17-da-xuat-hien.html"
-                                                target="_blank" class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Cộng đồng]</div>
-                                                <div class="title-newhome f-tahomabold">TIN VUI ĐẦU NĂM, VIP 9 THỨ 17 ĐÃ
-                                                    XUẤT
-                                                    HIỆN!
-                                                </div>
-                                                <div class="date-newhome">01-02-2023</div>
-                                            </a>
-                                            <a href="/home/news/cong-dong/tin-hy-tin-hy-lai-xuat-hien-them-vip-9-roi-day.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Cộng đồng]</div>
-                                                <div class="title-newhome f-tahomabold">TIN HỶ TIN HỶ, L�&nbsp;I XUẤT
-                                                    HIỆN THÊM
-                                                    VIP 9 RỒI ĐÂY!
-                                                </div>
-                                                <div class="date-newhome">06-12-2022</div>
-                                            </a>
-                                            <a href="/home/news/cong-dong/vip-10-cung-luc-chao-don-2-vi-nhan-si-xuat-hien-ho-la-ai.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Cộng đồng]</div>
-                                                <div class="title-newhome f-tahomabold">[HOT] VIP 10 CÙNG LÚC CHÀO ĐÓN 2
-                                                    VỊ NHÂN
-                                                    SĨ XUẤT HIỆN. HỌ LÀ AI?
-                                                </div>
-                                                <div class="date-newhome">02-11-2022</div>
-                                            </a>
-                                            <a href="/home/news/cong-dong/vinh-danh-xuat-hien-nhan-si-dat-vip-9-thu-15-tai-cuu-am-chan-kinh.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Cộng đồng]</div>
-                                                <div class="title-newhome f-tahomabold">VINH DANH QUÝ NHÂN SĨ Đ�&nbsp;T
-                                                    VIP 9
-                                                    THỨ 15
-                                                </div>
-                                                <div class="date-newhome">31-10-2022</div>
-                                            </a>
+    
                                         </div>
-
                                     </div>
-                                </div>
-
-                                <!-- bao chi -->
-                                <div class="box-detail-newhome  d-flex" id="dt-newhome5">
-                                    <a href="javascript:void(0)" class="img-hot">
-                                        <img src="/images/143-bao-chi.jpg" alt="">
-                                    </a>
-                                    <div class="info-hot-list-newhome">
-
-                                        <a href="/home/news/bao-chi/cong-dong-bung-no-cung-may-chu-moi-hoa-vo-khuyet.html"
-                                            class="info-hot f-utm_essendine_caps_b t-upper p-relative">
-                                            <div class="name-hot"></div>
-                                            <div class="by-date">01-01-1970</div>
-                                            <div class="des-hot"></div>
-                                        </a>
-
-                                        <div class="list-dt-newhome">
-                                            <a href="/home/news/bao-chi/chuoi-event-tet-cua-cuu-am-chan-kinh-ngoai-trang-vo-hoc-hiem-tran-ngap.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Báo chí]</div>
-                                                <div class="title-newhome f-tahomabold">Chuỗi event Tết của Tru Tiên 3 :
-                                                    Ngoại Trang, Võ Học Hiếm tr�&nbsp;n ngập
-                                                </div>
-                                                <div class="date-newhome">02-02-2019</div>
-                                                <!-- Tổng kết một năm thành công với hai máy chủ và một đại phiên bản, BQT của Tru Tiên 3   tổ chức nhiều event Tết, và cMa sự kiện tri ân với phần quà giá trị lớn. -->
-                                                <!-- <img src="/home/static/uploads/news/2016/thang-1/banner-tet/143x137.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/bao-chi/vo-hoc-cua-cuu-am-chan-kinh-3d-dat-con-so-ky-luc.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Báo chí]</div>
-                                                <div class="title-newhome f-tahomabold">Võ học của Tru Tiên 3 3D đạt con
-                                                    số kỷ lục
-                                                </div>
-                                                <div class="date-newhome">27-09-2018</div>
-                                                <!-- Với Đạt Ma Phái và Ngũ Tiên Giáo, số lượng môn phái và võ học của Tru Tiên 3   3D đạt con số kỷ lục -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-2/tintuc.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/bao-chi/cuu-am-chan-kinh-chi-5-nam-de-tro-thanh-tuong-dai-game-3d-nhap-vai.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Báo chí]</div>
-                                                <div class="title-newhome f-tahomabold">Tru Tiên 3 – chỉ 5 năm để trở
-                                                    th�&nbsp;nh
-                                                    tượng đ�&nbsp;i game 3D nhập vai
-                                                </div>
-                                                <div class="date-newhome">10-07-2018</div>
-                                                <!-- Vượt qua sự cạnh tranh quyết liệt của nhiều đối thủ sừng sỏ, Tru Tiên 3   đã đạt được nhiều thành tựu đáng nể trong 5 năm qua, xứng đáng là một tượng đài trong thị trường game Việt Nam nói chung và dòng MMORPG 3D nói riêng. -->
-                                                <!-- <img src="/home/static/templates/frontend/homepage/cack2/images/default.jpg?v=2" /> -->
-                                            </a>
-                                            <a href="/home/news/bao-chi/lay-lai-niem-tin-cho-cac-game-thu-ve-mot-giai-dau-pvp-chuyen-nghiep.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Báo chí]</div>
-                                                <div class="title-newhome f-tahomabold">Lấy lại niềm tin cho cMa game
-                                                    thủ về một
-                                                    Giải Đấu PvP chuyên nghiệp
-                                                </div>
-                                                <div class="date-newhome">30-09-2017</div>
-                                                <!-- Mới đây, Tru Tiên 3   đã ra mắt giải đấu Lục Long Chi Chiến, lấy lại niềm tin cho cộng đồng về một sân chơi PvP thực sự chuyên nghiệp…  -->
-                                                <!-- <img src="/home/static/uploads/news/2017/thang-9/tin-tuc/tin-tuc-giai-dau/atac.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/bao-chi/qua-la-sai-lam-neu-ban-nghi-game-thu-viet-chi-thich-cac-game-mi-an-lien.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Báo chí]</div>
-                                                <div class="title-newhome f-tahomabold">Quả l�&nbsp; sai lầm nếu bạn
-                                                    nghĩ game
-                                                    thủ Việt chỉ thích cMa game "mì ăn liền"
-                                                </div>
-                                                <div class="date-newhome">23-08-2017</div>
-                                                <!-- Bởi lẽ qua thời gian, cMa tựa game Client, đặc biệt là cMa sản phẩm 3D "hardcore" đỉnh cao vẫn luôn giữ được vị thế vượt trội cũng như sức nóng của mình, thu hút hàng triệu game thủ tham gia trải nghiệm và gắn bó dài lâu. -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-3/8.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/bao-chi/nhin-lai-4-nam-chinh-chien-cua-cuu-am-chan-kinh.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Báo chí]</div>
-                                                <div class="title-newhome f-tahomabold">Nhìn lại 4 năm chinh chiến của
-                                                    Tru Tiên 3
-
-                                                </div>
-                                                <div class="date-newhome">20-07-2017</div>
-                                                <!-- Bốn năm đồng hành sát cánh, sự gắn bó của cMa game thủ trong ngôi nhà chung này chính là yếu tố quan trọng khiến Tru Tiên 3   không ngừng đi lên, trong khi cMa đối thủ khMa đã bước vào giai đoạn thoái trào…
-
-                       -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-1/143x137_tt.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/bao-chi/pewpew-bat-ngo-bi-game-thu-cuu-am-chan-kinh-doa-san-sap-mat-nhu-qtv.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Báo chí]</div>
-                                                <div class="title-newhome f-tahomabold">PewPew bất ngờ bị game thủ Tru
-                                                    Tiên 3 PC dọa săn sấp mặt như QTV
-                                                </div>
-                                                <div class="date-newhome">28-06-2017</div>
-                                                <!-- Vào 21h00 tối mai, 29/06, nhân ngay máy chủ mới Kiều Phong ra mắt, PewPew sẽ chính thức đến với Tru Tiên 3  . -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-2/pewpew.jpg" /> -->
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <!-- huong dan -->
-                                <div class="box-detail-newhome  d-flex" id="dt-newhome6">
-                                    <a href="javascript:void(0)" class="img-hot">
-                                        <img src="/images/143x137_cn.jpg" alt="">
-                                    </a>
-                                    <div class="info-hot-list-newhome">
-
-                                        <a href="/home/news/huong-dan/tips-hay-danh-cho-tan-thu-dung-bo-lo.html"
-                                            target="_blank" class="info-hot f-utm_essendine_caps_b t-upper p-relative">
-                                            <div class="name-hot">TIPS HAY DÀNH CHO TÂN THỦ - ĐỪNG BỎ L�&nbsp;!</div>
-                                            <div class="by-date">09-01-2023</div>
-                                            <div class="des-hot">10h00 ng�&nbsp;y 10/01/2023, Máy chủ mới Vô Danh Kiếm
-                                                sẽ chính
-                                                thức khai mở. Bạn đã chuẩn bị cho quá trình l�&nbsp;m tân thủ đầy "thử
-                                                thMah"
-                                                tại Tru Tiên 3 ?
-                                            </div>
-                                        </a>
-
-                                        <div class="list-dt-newhome">
-                                            <a href="/home/news/huong-dan/newbie-tips-bo-tui-danh-cho-tan-thu.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Hướng dẫn]</div>
-                                                <div class="title-newhome f-tahomabold">[Newbie] Tips bỏ túi d�&nbsp;nh
-                                                    cho Tân
-                                                    Thủ
-                                                </div>
-                                                <div class="date-newhome">24-07-2019</div>
-                                                <!-- 10h00 ngày 24/07/2019, Máy chủ mới Tiểu Long Nữ sẽ chính thức khai mở. Bạn đã chuẩn bị gì cho quá trình làm tân thủ đầy "thử thMah" tại Tru Tiên 3   chưa? -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-1/143x137_cd.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/huong-dan/tam-noi-khai-mo-thi-nen-ve-phai-nao.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Hướng dẫn]</div>
-                                                <div class="title-newhome f-tahomabold">[Góc chia sẻ] Tam Nội khai mở
-                                                    thì nên về
-                                                    phái n�&nbsp;o?
-                                                </div>
-                                                <div class="date-newhome">20-09-2018</div>
-                                                <!-- Ngự Miêu lại tiếp tục trở lại với quý nhân sĩ trong câu chuyện khi Tam Nội khai mở. Hãy cùng đón xem! -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-1/143x137_cn.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/huong-dan/mo-noi-3-thi-nhan-si-nen-lam-gi.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Hướng dẫn]</div>
-                                                <div class="title-newhome f-tahomabold">[Góc chia sẻ] Mở Nội Công 3 thì
-                                                    nhân sĩ
-                                                    nên l�&nbsp;m gì?
-                                                </div>
-                                                <div class="date-newhome">19-09-2018</div>
-                                                <!-- "Đi một ngày đàng học một sàng khôn" - Trên đường hành tẩu, trải nghiệm thế giới Tru Tiên 3  , tại hạ đã dành dụm được một số kinh nghiệm xương máu, nay mạn phép chia sẻ cùng quý đồng đạo. -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-1/143x137_cn.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/huong-dan/huong-dan-farm-diem-binh-luc-tung-hoanh-tu-hai.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Hướng dẫn]</div>
-                                                <div class="title-newhome f-tahomabold">Hướng dẫn farm điểm Binh Lục -
-                                                    Tung Ho�&nbsp;nh
-                                                    Tứ Hải
-                                                </div>
-                                                <div class="date-newhome">01-09-2018</div>
-                                                <!-- Tổng thời gian hoàn thành 06 lượt thiết lập, khoảng 1h bạn sẽ có tối thiểu 70 điểm Binh lục. May mắn hơn sẽ là khoảng 80-100 điểm binh lục. -->
-                                                <!-- <img src="/home/static/uploads/news/2014/07/26/01/image004.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/huong-dan/huong-dan-nhiem-vu-cuu-am-chi-noi-cong-2.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Hướng dẫn]</div>
-                                                <div class="title-newhome f-tahomabold">Hướng Dẫn Nhiệm Vụ Tru Tiên 3
-                                                </div>
-                                                <div class="date-newhome">19-08-2018</div>
-                                                <!-- Nội Công 2 tại máy chủ Độc Cô Cầu Bại khai mở từ ngày 01/08/2018. Bổn Trang sẽ hướng dẫn chư vị nhân sĩ thực hiện nhiệm vụ Tru Tiên 3 Chí và đổi Nội Công 2, chi tiết như sau: -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-1/143x137_hd.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/huong-dan/huong-dan-tham-gia-doat-thu-mon-phai.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Hướng dẫn]</div>
-                                                <div class="title-newhome f-tahomabold">Hướng dẫn tham gia Đoạt Thư Môn
-                                                    Phái
-                                                </div>
-                                                <div class="date-newhome">15-08-2018</div>
-                                                <!-- Tru Tiên 3   có 1 thư viện võ học vô cùng đồ sộ mang nét riêng cho mình nhờ khả năng "học trộm" kĩ năng của cMa phái. Để làm được điều đó phải nhờ đến "Cướp SMah - Hộ Thư". -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-1/143x137_hd.jpg" /> -->
-                                            </a>
-                                            <a href="/home/news/huong-dan/huong-dan-tham-gia-mon-phai-chien.html"
-                                                class="it-dt-newhome d-flex f-tahoma t-upper">
-                                                <div class="cat-newhome">[Hướng dẫn]</div>
-                                                <div class="title-newhome f-tahomabold">Hướng dẫn tham gia Môn Phái
-                                                    Chiến</div>
-                                                <div class="date-newhome">30-07-2018</div>
-                                                <!-- Những cuộc chiến tranh giành vị thế và lợi ích giữa cMa môn phái luôn xảy ra. Nhân sĩ máy chủ Độc Cô Cầu Bại đã sàng tham gia Môn Phái Chiến diễn ra vào thứ 6, thứ 7 hàng tuần? -->
-                                                <!-- <img src="/home/static/uploads/anh-tin-bai/phan-1/143x137_hd.jpg" /> -->
-                                            </a>
-                                        </div>
-
-                                    </div>
+    
                                 </div>
 
                             </div>
+
 
 
                         </div>
@@ -1965,6 +1518,16 @@
 
         <div id="fb-root"></div>
         <script>
+            var vid = document.getElementById("video-pc");
+            vid.addEventListener("timeupdate", function () {
+                if(this.currentTime >= 5.0) {
+                    this.currentTime = 0.0;
+                }
+            });
+            vid.addEventListener('ended', () => {
+            video.currentTime = 0.05;
+            video.play();
+            });
             (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
