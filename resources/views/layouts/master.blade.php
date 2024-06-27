@@ -45,95 +45,33 @@
 
 
             <div class="main-headerpage d-flex">
-                <a href="/home/" class="logo-page ">
+                <a href="/" class="logo-page ">
                     <img src="/images/logo-trutien-trans.png" alt="" style="width:250px;height:150px">
                 </a>
                 <div class="list-menu f-utm_essendine_caps_b t-upper d-flex">
                     <div class="it-menu p-relative">
-                        <div class="link-menu c-pointer name-hover">Tin tức</div>
-                        <div class="list-menu-show t-center p-absolute">
-                            <a href="/home/news/tin-tuc.html" class="link-to-end f-tahoma">Tin tức</a>
-                            <a href="/home/news/su-kien.html" class="link-to-end f-tahoma">Sự kiện</a>
-                            <a href="/home/news/cong-dong.html" class="link-to-end f-tahoma">Cộng đồng</a>
-                        </div>
+                        <a href="/tin-tuc" class="link-menu c-pointer name-hover">Tin tức</a>
                     </div>
 
                     <div class="it-menu p-relative">
-                        <div class="link-menu c-pointer name-hover">Giới thiệu</div>
-                        <div class="list-menu-show t-center p-absolute">
-                            <a href="/home/cuu-am-bao-dien/gioi-thieu/gioi-thieu-cuu-am-chan-kinh-2.html"
-                                class="link-to-end f-tahoma">Tru Tiên 3</a>
-                            <a href="/home/cuu-am-bao-dien/gioi-thieu/mon-phai-the-luc/thieu-lam"
-                                class="link-to-end f-tahoma">Môn Phái - Thế lực</a>
-                            <a href="/home/cuu-am-bao-dien/gioi-thieu.html" class="link-to-end f-tahoma">Phiên bản</a>
-                            <!-- <a href="javascript:void(0)" class="link-to-end f-tahoma">Phong vật chí</a>
-                        <a href="javascript:void(0)" class="link-to-end f-tahoma">Thập ngũ mạch phái</a>
-                        <a href="javascript:void(0)" class="link-to-end f-tahoma">Võ học</a>
-                        <a href="javascript:void(0)" class="link-to-end f-tahoma">Giao diện</a>
-                        <a href="javascript:void(0)" class="link-to-end f-tahoma">Bản đồ</a>
-                        <a href="javascript:void(0)" class="link-to-end f-tahoma">Tru Tiên 3 PC</a> -->
-                        </div>
+                        <a href="" class="link-menu c-pointer name-hover">Giới thiệu</a>
                     </div>
 
                     <div class="it-menu p-relative">
-                        <div class="link-menu c-pointer name-hover">Hướng dẫn</div>
-                        <div class="list-menu-show t-center p-absolute">
-                            <a target="_blank" href="/home/cuu-am-bao-dien/tan-thu/co-ban/tai-va-cai-dat-game.html"
-                                class="link-to-end f-tahoma">Cài đặt game</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/tan-thu/co-ban/dang-ky-tai-khoan.html"
-                                class="link-to-end f-tahoma">Đăng ký tài khoản</a>
-                            <!-- <a href="javascript:void(0)" class="link-to-end f-tahoma">Vào trò chơi</a>
-                        <a href="javascript:void(0)" class="link-to-end f-tahoma">Tru Tiên 3 bảo điển</a> -->
-                            <a target="_blank" href="/home/cuu-am-bao-dien/tan-thu.html"
-                                class="link-to-end f-tahoma">Kinh
-                                nghiệm tân thủ</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/cao-thu.html"
-                                class="link-to-end f-tahoma">Kinh
-                                nghiệm cao thủ</a>
-                        </div>
+                        <a href="" class="link-menu c-pointer name-hover">Hướng dẫn</a>
                     </div>
 
                     <div class="it-menu p-relative">
-                        <div class="link-menu c-pointer name-hover">Download</div>
-                        <div class="list-menu-show t-center p-absolute">
-                            <a target="_blank" href="/tai-khoan/tai-game.html" class="link-to-end f-tahoma">Download</a>
-                            <a target="_blank" href="/tai-khoan/tai-game.html" class="link-to-end f-tahoma">Cấu hình yêu
-                                cầu</a>
-                        </div>
+                        <a href="/tai-game" class="link-menu c-pointer name-hover">Download</a>
                     </div>
 
                     <div class="it-menu p-relative">
-                        <div class="link-menu c-pointer name-hover">Đặc sắc</div>
-                        <div class="list-menu-show t-center p-absolute">
-                            <a target="_blank" href="/home/cuu-am-bao-dien/gioi-thieu/dac-sac/do-hoa"
-                                class="link-to-end f-tahoma">3D Tiên Hiệp</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/gioi-thieu/dac-sac/khong-cap-do"
-                                class="link-to-end f-tahoma">Tiên Hiệp Đặc Sắc</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/gioi-thieu/dac-sac/vo-hoc"
-                                class="link-to-end f-tahoma">Thời trang đẹp mắt</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/gioi-thieu/dac-sac/khinh-cong-150262666"
-                                class="link-to-end f-tahoma">Kỹ năng đặc sắc</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/gioi-thieu/dac-sac/nghe-nghiep"
-                                class="link-to-end f-tahoma">18 đại môn phái</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/gioi-thieu/dac-sac/ky-ngo"
-                                class="link-to-end f-tahoma">Hệ Thống Tinh Tú</a>
-                            <a target="_blank" href="/home/cuu-am-bao-dien/gioi-thieu/dac-sac/offline"
-                                class="link-to-end f-tahoma">Lộ trình chuẩn</a>
-                        </div>
+                        <a href="" class="link-menu c-pointer name-hover">Đặc sắc</a>
                     </div>
 
 
                     <div class="it-menu p-relative">
-                        <div class="link-menu c-pointer name-hover">Thư Viện</div>
-                        <div class="list-menu-show t-center p-absolute">
-                            <a target="_blank" href="/home/gallery/wallpaper.html"
-                                class="link-to-end f-tahoma">Wallpaper</a>
-                            <a target="_blank" href="/home/gallery/artwork.html"
-                                class="link-to-end f-tahoma">ArtWork</a>
-                            <!-- <a target="_blank" href="/home/gallery/screenshot.html" class="link-to-end f-tahoma">Screenshot</a> -->
-                            <a target="_blank" href="/home/gallery/video.html"
-                                class="link-to-end f-tahoma">Clip/video</a>
-                        </div>
+                        <a href="" class="link-menu c-pointer name-hover">Thư Viện</a>
                     </div>
 
                     <div class="it-menu p-relative">
@@ -141,7 +79,7 @@
                     </div>
 
                     <div class="it-menu p-relative">
-                        <div class="link-menu c-pointer name-hover">Cộng đồng</div>
+                        <a href="" class="link-menu c-pointer name-hover">Cộng đồng</a>
                         <div class="list-menu-show t-center p-absolute">
                             <a target="_blank" href="javascript:void(0)" class="link-to-end f-tahoma">GROUP</a>
                             <a href="javascript:void(0)" target="_blank" class="link-to-end f-tahoma">Fanpage</a>
@@ -189,14 +127,14 @@
                     </div>
 
                     <div class="slide-banner">
-                        <a target="_blank" href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
+                        <a target="_blank" href="/tin-tuc"
                             class="it-banner ActiveBanner">
                             <img src="/images/banner1.jpg" alt="">
                         </a>
-                        <a target="_blank" href="/home/su-kien/dai-tiec-cuu-am-thang-5.htm" class="it-banner ">
+                        <a target="_blank" href="/tin-tuc" class="it-banner ">
                             <img src="/images/banner2.jpg" alt="">
                         </a>
-                        <a target="_blank" href="/home/news/su-kien/khuyen-mai-danh-tuan-thang-062024.html"
+                        <a target="_blank" href="/tin-tuc"
                             class="it-banner ">
                             <img src="/images/banner3.jpg" alt="">
                         </a>
@@ -287,17 +225,17 @@
 
 
                                 <div class="view-more p-absolute">
-                                    <a target="_blank" href="/home/news/tin-moi.html" id="newhome1"
+                                    <a target="_blank" href="/tin-tuc" id="newhome1"
                                         class="link-view-more active"><img src="/images/plus.png" alt=""></a>
-                                    <a target="_blank" href="/home/news/thong-bao.html" id="newhome2"
+                                    <a target="_blank" href="/tin-tuc" id="newhome2"
                                         class="link-view-more"><img src="/images/plus.png" alt=""></a>
                                     <a target="_blank" href="/home/event.html" id="newhome3" class="link-view-more"><img
                                             src="/images/plus.png" alt=""></a>
-                                    <a target="_blank" href="/home/news/cong-dong.html" id="newhome4"
+                                    <a target="_blank" href="/tin-tuc" id="newhome4"
                                         class="link-view-more"><img src="/images/plus.png" alt=""></a>
-                                    <a target="_blank" href="/home/news/bao-chi.html" id="newhome5"
+                                    <a target="_blank" href="/tin-tuc" id="newhome5"
                                         class="link-view-more"><img src="/images/plus.png" alt=""></a>
-                                    <a target="_blank" href="/home/news/huong-dan.html" id="newhome6"
+                                    <a target="_blank" href="/tin-tuc" id="newhome6"
                                         class="link-view-more"><img src="/images/plus.png" alt=""></a>
                                 </div>
                             </div>
@@ -412,7 +350,7 @@
                                 </div>
     
                                 <div class="hot-list-newhome p-relative">
-                                    <div class="box-detail-newhome d-flex active" id="dt-newhome4">
+                                    <div class="box-detail-newhome d-flex" id="dt-newhome4">
                                         <a href="/home/news/su-kien/0906-1206-uu-dai-nap-vang-nhan-ngan-qua-tang.html"
                                             class="img-hot">
                                             <img src="/images/khuyenmai.jpg" alt="">
@@ -1549,24 +1487,6 @@
         });
     });
         </script>
-
-        <script type="text/javascript">
-            // $(document).ready(function() {
-    //     $(".various_bk").fancybox({
-    //       maxWidth    : 375,
-    //       maxHeight   : 470,
-    //       fitToView   : false,
-    //       width       : '375',
-    //       height      : '470',
-    //       autoSize    : false,
-    //       closeClick  : false,
-    //       openEffect  : 'none',
-    //       closeEffect : 'none',
-    //       padding: 0
-    //     });
-    // });
-        </script>
-
         <script>
             $("body").on("click", ".close-popup, .close-popup-full, .btn-close", function () {
         $(this).parents(".popup").fadeOut();

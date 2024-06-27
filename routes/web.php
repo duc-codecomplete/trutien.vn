@@ -21,6 +21,7 @@ Route::get('/tai-game', [HomeController::class, 'download']);
 
 
 Route::get('/tin-tuc', [HomeController::class, 'listNews']);
+Route::get('/tin-tuc/danh-muc/{cate}', [HomeController::class, 'category']);
 Route::get('/tin-tuc/{title}', [HomeController::class, 'detailNews']);
 
 

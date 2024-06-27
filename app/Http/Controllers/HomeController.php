@@ -40,10 +40,16 @@ class HomeController extends Controller
     }
 
     public function listNews() {
-        return view('news.index');
+        $news = Post::latest()->paginate(10);
+        return view('news.index', ["news" => $news]);
     }
 
-    public function detailNews($title) {
-        return view('news.show');
+    public function category() {
+        return view('news.cate');
+    }
+
+    public function detailNews($slug) {
+        $post = Post::where("slug", $slug)->first();
+        return view('news.show', ["post" => $post]);
     }
 }
