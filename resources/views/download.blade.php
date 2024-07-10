@@ -45,7 +45,7 @@
                         <td><b>TruTienVietNam.zip</b></td>
                         <td>12.1 GB</td>
                         <td>Google Driver</td>
-                        <td><a class="gdownloader-2" href="/">
+                        <td><a class="gdownloader-2" href="https://drive.google.com/file/d/18nVViMHEP6d4S3HW73EaVAZK8cA9f2qo/view?usp=sharing">
                                 <img style="max-width: 100%; height: 50px;" src="/download/download_button.png" alt="">
                             </a></td>
                     </tr>
@@ -53,7 +53,7 @@
                         <td><b>TruTienVietNam.zip</b></td>
                         <td>12.1 GB</td>
                         <td>Trực Tiếp</td>
-                        <td><a class="gdownloader-2" href="/">
+                        <td><a class="gdownloader-2" href="https://patcher.trutien.vn/TruTienVietNam.zip">
                                 <img style="max-width: 100%; height: 50px;" src="/download/download_button.png" alt="">
                             </a></td>
                     </tr>
