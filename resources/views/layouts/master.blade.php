@@ -117,7 +117,7 @@
                             </a>
                         </div>
                         <div class="reg-card-home f-utm_essendine_caps_b card-home-top napthe-home">
-                            <a target="_blank" href="https://id.trutien.vn/nap-the"
+                            <a target="_blank" href="https://id.trutien.vn/nap-tien"
                                 class="a100 d-flex a-center j-center">
                                 <img src="/images/dot.png" alt="">
                                 <span>Nạp Thẻ</span>
