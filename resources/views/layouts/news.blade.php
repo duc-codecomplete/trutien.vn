@@ -339,47 +339,48 @@
 
     <div class="footer-gosu footer-home-hy">
         <div class="footer-gosu-inner" itemscope="" itemtype="http://schema.org/Organization">
-            <a href="https://gosucorp.vn/" title="GOSU" class="footer-logo-gosu" target="_blank"><span
-                    itemprop="legalName">GOSU</span></a>
-            <div class="logo cubinet"></div>
+            <a href="javascript:void(0)" title="GOSU" class="footer-logo-gosu" target="_blank">
+                <img src="/images/logo2024.png" style="width: 100%;">
+            </a>
             <style>
-                .footer-gosu .logo {
-                    display: block;
-                    height: 39px;
-                    float: left;
+                .footer-logo-gosu {
                     position: absolute;
-                    left: -38px;
-                    top: 40px;
+                    display: block;
+                    width: 185px;
+                    height: 41px;
+                    left: 0;
+                    top: 0;
                 }
 
-                .footer-gosu .logo.cubinet {
-                    width: 238px;
-                    background: url(http://trutien.vn/home/static/templates/frontend/homepage/cack2/images/logo-cubinet.png) no-repeat center center;
-                    background-size: contain;
+                .footer-gosu .logo {
+                    margin-top: 50px;
+                    left: -28px;
                 }
             </style>
+            <div class="logo cubinet"></div>
             <p class="footer-link-privacy">
-                <a href="http://hotro.gosu.vn/" title="Hỗ Trợ" class="bs" target="_blank">Hỗ Trợ</a>
+                <a href="javascript:void(0)" title="Hỗ Trợ" class="bs" target="_blank">Hỗ Trợ</a>
                 |
-                <a href="https://trutien.vn/home/cuu-am-bao-dien/tan-thu/co-ban/tai-va-cai-dat-game.html"
-                    target="_blank" class="bs">Cài Đặt</a>
+                <a href="/home/cuu-am-bao-dien/tan-thu/co-ban/tai-va-cai-dat-game.html" target="_blank"
+                    class="bs">Cài
+                    Đặt</a>
                 |
-                <a href="https://trutien.vn/home/news/tin-tuc/dieu-khoan-su-dung.html" title="Điều Khoản" class="bs"
-                    target="_blank">Điều Khoản</a>
+                <a href="/home/news/tin-tuc/dieu-khoan-su-dung.html" title="Điều Khoản" class="bs"
+                    target="_blank">Điều
+                    Khoản</a>
             </p>
             <p class="rs">Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-            <p class="rs">Giấy phép số 2474/QĐ-BTTTT cấp ngày 29/12/2015</p>
+            <p class="rs">Giấy phép số -----------------------</p>
 
-            <p class="rs" itemprop="name">Công ty cổ phần trực tuyến GOSU</p>
-            <p class="rs" itemprop="address">Địa chỉ: Tầng 3, Tòa nhà HH2 - Bắc Hà, Số 15 Tố Hữu, Phường Nhân Chính,
-                Quận Thanh Xuân, TP. Hà Nội</p>
-            <p class="rs" itemprop="telephone">Điện thoại: (+84) 24 6686 0058</p>
-            <p class="rs" itemprop="">Người chịu trách nhiệm nội dung: Ông Trần Trọng Kiên</p>
-            <p class="rs" itemprop="hotline">Hotline: CSKH 1900 7189</p>
-            <p>Email hỗ trợ: <a href="mailto:cskh@gosu.vn" style="    color: black;">cskh@gosu.vn</a></p>
-            <p class="rs">Thời gian: 8:00 - 22:00 các ngày (GMT+7)</p>
+            <p class="rs" itemprop="name">TruTiên.VN </p>
+            <p class="rs" itemprop="address">Địa chỉ: ----------------------</p>
+            <p class="rs" itemprop="telephone">Điện thoại: ----------------</p>
+            <p class="rs" itemprop="">Người chịu trách nhiệm nội dung: TruTien.Vn</p>
+            <p class="rs" itemprop="hotline">Hotline: CSKH TruTiên.Vn - Họa Ảnh Giáng Lâm</p>
+            <p>Email hỗ trợ: <a href="hotro@trutien.vn" style="    color: black;">hotro@trutien.vn</a></p>
+            <p class="rs">Thời gian: 8:00 - 22:00 (GMT+7)</p>
 
-            <img src="/download/eighteen.jpg" width="70" height="101" class="footer-gosu-18">
+            <img src="/images/eighteen.jpg" width="70" height="101" class="footer-gosu-18">
         </div>
     </div>
 
