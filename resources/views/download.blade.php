@@ -45,7 +45,7 @@
                         <td><b>TruTienVietNam.zip</b></td>
                         <td>12.1 GB</td>
                         <td>Google Driver</td>
-                        <td><a class="gdownloader-2" href="https://drive.google.com/file/d/18nVViMHEP6d4S3HW73EaVAZK8cA9f2qo/view?usp=sharing">
+                        <td><a target="_blank" class="gdownloader-2" href="https://drive.google.com/file/d/18nVViMHEP6d4S3HW73EaVAZK8cA9f2qo/view?usp=sharing">
                                 <img style="max-width: 100%; height: 50px;" src="/download/download_button.png" alt="">
                             </a></td>
                     </tr>
@@ -61,7 +61,7 @@
                         <td><b>TruTienVietNam.zip</b></td>
                         <td>12.1 GB</td>
                         <td>Fshare</td>
-                        <td><a class="gdownloader-2" href="/">
+                        <td><a target="_blank" class="gdownloader-2" href="https://www.fshare.vn/file/IJVJQSIVM816">
                                 <img style="max-width: 100%; height: 50px;" src="/download/download_button.png" alt="">
                             </a></td>
                     </tr>

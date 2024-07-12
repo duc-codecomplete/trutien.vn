@@ -109,7 +109,7 @@
                             </a>
                         </div>
                         <div class="reg-card-home f-utm_essendine_caps_b reg-home-top dangky-home">
-                            <a rel="register-podpup" href="https://id.trutien.vn"
+                            <a target="_blank" rel="register-podpup" href="https://id.trutien.vn"
                                 class="a100 d-flex a-center j-center various">
                                 <img src="/images/dot.png" alt="">
                                 <span>Đăng Ký Nhanh</span>

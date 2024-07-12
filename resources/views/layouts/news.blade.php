@@ -309,7 +309,7 @@
                             title="KN Cao Thủ">KN Cao Thủ</a>
                     </div>
                 </div>
-                <a href="https://id.trutien.vn/dang-ky" rel="login-popup" title="Đăng kí">Đăng
+                <a target="_blank" href="https://id.trutien.vn/dang-ky" rel="login-popup" title="Đăng kí">Đăng
                     ký</a>
                 <div class="drop_nav">
                     <span>Hỗ trợ</span>
@@ -328,7 +328,7 @@
                     </div>
                 </div>
             </nav>
-            <a target="_blank" href="https://trutien.vn/" title="Trang chủ" class="logo"></a>
+            <a href="https://trutien.vn/" title="Trang chủ" class="logo"></a>
         </div>
     </header>
 
