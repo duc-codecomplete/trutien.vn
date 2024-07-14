@@ -98,7 +98,7 @@
                         <div class="cat-title-des">
                             <div class="cat">{{ App\Models\Post::CATEGORIES[$item->category]}} </div>
                             <div class="title-newpage f-tahomabold">{{ $item->title}}</div>
-                            <div class="des-newpage">{{ substr($item->content,0, 100)}}...</div>
+                            <div class="des-newpage">{!! substr($item->content,0, 100) !!}...</div>
                         </div>
                     </div>
                 </a>
